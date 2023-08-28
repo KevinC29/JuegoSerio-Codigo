@@ -17,6 +17,7 @@ public class ControladorPuntuaciones : MonoBehaviour
     // [SerializeField] private TMP_Text score_diamante2 = null;
     // [SerializeField] private TMP_Text score_estrella3 = null;
     [SerializeField] private GameObject continueSection;
+    [SerializeField] private GameObject reload;
 
     private NetworkManager networkManager = null;
 
@@ -51,6 +52,7 @@ public class ControladorPuntuaciones : MonoBehaviour
     {
         // SaveData();
         continueSection.SetActive(false);
+        reload.SetActive(false);
         StartCoroutine("SendAnswers");
         ShowScores();
 
@@ -101,6 +103,7 @@ public class ControladorPuntuaciones : MonoBehaviour
                 if (response.message.Contains("failed"))
                 {
                     textError.text = "Error de Conexión - Revise su Conexión a Internet";
+                    reload.SetActive(true);
                 }
                 else
                 {
@@ -108,10 +111,12 @@ public class ControladorPuntuaciones : MonoBehaviour
                     {
                         // StartCoroutine("SendAnswers");
                         textError.text = "Juego Guardado Exitosamente";
+                        reload.SetActive(false);
                     }
                     else
                     {
                         textError.text = "El Juego Ya Existe";
+                        reload.SetActive(false);
                     }
                     continueSection.SetActive(true);
                 }

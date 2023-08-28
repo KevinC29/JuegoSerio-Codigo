@@ -1138,6 +1138,7 @@ MonoBehaviour:
   starScore2: {fileID: 743151688}
   textError: {fileID: 1552489007}
   continueSection: {fileID: 829127565}
+  reload: {fileID: 902975638}
 --- !u!1 &370337382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,7 +4559,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447642616}
-  - component: {fileID: 1447642617}
   m_Layer: 0
   m_Name: GestionPreguntas
   m_TagString: Untagged
@@ -4583,18 +4583,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1447642617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447642615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42e2fed103c895042b89c5210cd2e5a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1514266374
 GameObject:
   m_ObjectHideFlags: 0
