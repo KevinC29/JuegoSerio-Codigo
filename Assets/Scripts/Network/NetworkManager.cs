@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class NetworkManager : MonoBehaviour
 {       
     private static string url_global = "https://apiseriusgame-production.up.railway.app/api/1.0";
+    //private static string url_global = "https://computacion.unl.edu.ec/pdml/server/api/1.0";
     private string url_login = url_global + "/student/login";
     private string url_test = url_global + "/caso/test/student";
     private string url_images = url_global + "/testImages";

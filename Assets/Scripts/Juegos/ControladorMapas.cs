@@ -16,6 +16,7 @@ public class ControladorMapas : MonoBehaviour
     [SerializeField] private string nextSceneName;
     [SerializeField] private string gameNumber;
 
+    private GameObject audioObject;
     private int items;
     private int stars;
 
@@ -70,12 +71,26 @@ public class ControladorMapas : MonoBehaviour
     {
         controllerScene.MessageScene(nextSceneMessage);
         yield return new WaitForSeconds(3);
+        ControladorAudio.existAudio = false;
+        Destroy(audioObject);
         controllerScene.OpenScene(nextSceneName);
     }
 
     //Funcion que elimina el objeto de controlador de mapas al finalizar el juego de plataformas
     private void Awake()
     {
+
+        audioObject = GameObject.Find("Audio");
+
+        if (audioObject != null)
+        {
+            Debug.Log("El objeto Audio se encontro en la Escena");
+        }
+        else
+        {
+            Debug.Log("El objeto Audio no se encontro en la Escena");
+        }
+
         if(current != null && current != this)
         {
             Destroy(gameObject);
