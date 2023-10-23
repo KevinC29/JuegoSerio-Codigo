@@ -14,10 +14,4 @@ public class ControladorObjetos : MonoBehaviour
             Destroy(objectToDestroy);
         }
     }
-
-    //Funcion para resetear el audio del juego
-    public void AudioStatus()
-    {      
-        ControladorAudio.existAudio = false;  
-    }
 }

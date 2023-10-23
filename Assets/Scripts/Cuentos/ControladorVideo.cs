@@ -11,36 +11,10 @@ using UnityEngine.Video;
         [SerializeField] private GameObject btn_reset;
         public bool play;
 
-        private AudioSource audioSource;
-
         private void Start()
         {
             videoPlayer.Play();
             videoPlayer.Pause();
-            GameObject audioObject = GameObject.Find("Audio");
-
-            if (audioObject != null)
-            {
-                audioSource = audioObject.GetComponent<AudioSource>();
-                AudioGameMute();
-            }
-            else
-            {
-                Debug.Log("El objeto Audio no se encontro en la Escena");
-            }
-
-        }
-
-        //Funcion para mutear el audio del juego
-        public void AudioGameMute()
-        {
-            audioSource.mute = true;
-        }
-
-        //Funcion para desmutear el audio del juego
-        public void AudioGamePlay()
-        {
-            audioSource.mute = false;
         }
 
         //Funcion para reproducir el video

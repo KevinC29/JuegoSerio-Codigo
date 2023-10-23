@@ -14,24 +14,13 @@ public class LoginManager : MonoBehaviour
     [SerializeField] private TMP_Text textError;
     private string estudent;
     private int test;
+    
+    
     private NetworkManager networkManager = null;
-
-    private GameObject audioObject;
 
     private void Awake()
     {
         networkManager = GameObject.FindObjectOfType<NetworkManager> ();
-        audioObject = GameObject.Find("Audio");
-
-        if (audioObject != null)
-        {
-            Debug.Log("El objeto Audio se encontro en la Escena");
-        }
-        else
-        {
-            Debug.Log("El objeto Audio no se encontro en la Escena");
-        }
-
     }
 
     private void Start()
@@ -108,9 +97,7 @@ public class LoginManager : MonoBehaviour
         Debug.Log("ESTUDIANTE!!!>" + estudent);
         yield return new WaitForSeconds(2);
         textError.text = "Bienvenido";
-        ControladorAudio.existAudio = false;
-        Destroy(audioObject);
-        SceneManager.LoadScene("Juego");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     //Funcion para detectar si existe la cantidad de imagenes necesarias para el test
